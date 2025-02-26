@@ -7,8 +7,8 @@ sequences=(
 
 for seq in "${sequences[@]}";
 	do
-	nome_base = $(basename "$seq" .fasta)
-	outfile = "result-0-${nome_base}"
+	name_base = $(basename "$seq" .fasta)
+	outfile = "result-0-${name_base}"
 	
 	blastn -db ../db/Scaptotrigona.bipunctata.LIB.2023.fa -query "$seq" -outfmt 0 -out "$outfile"
 	echo "Processing file: $seq -> $outfile"
